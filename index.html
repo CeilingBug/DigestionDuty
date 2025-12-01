@@ -20,30 +20,24 @@
         <button id="save">Save Game</button>
     </div>
     <py-script>
-        from pyscript import Element
         from js import document
-        #event handler is uneeded unless acessing extra info like Element details or js stuff
+
         def change_title():
             # Grab the element by ID
-            title = Element("title")
+            title = document.getElementById("title")
             # Change its inner text
-            title.write("Title changed by Python!")
-        
-        def save_game():
-            # Game state as plain text
-            game_state = "health=80\nlocation=forest\ninventory=sword,shield"
+            title.innerText = "Title changed by Python!"
             
-            # Create a hidden link
+        def save_game():
+            game_state = "health=80\nlocation=forest\ninventory=sword,shield"
             link = document.createElement("a")
             link.href = "data:text/plain;charset=utf-8," + game_state
             link.download = "savegame.txt"
             link.click()
-
-        # Attach the function to the button click
-        Element("save").element.onclick = save_game
-
-        # Attach the function to the button click
-        Element("btn").element.onclick = change_title
+        
+        # Attach the functions
+        document.getElementById("save").onclick = save_game
+        document.getElementById("btn").onclick = change_title
     </py-script>
     <style>
         body {
