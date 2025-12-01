@@ -1,0 +1,5 @@
+Bars:
+sanity
+Hp
+favor
+
