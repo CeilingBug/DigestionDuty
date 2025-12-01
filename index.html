@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A Concrete Room</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1 id="title">Original Title</h1>
+    <button id="btn">Click Me</button>
+
+    <py-script>
+        from pyscript import Element
+
+        def change_title(event):
+            # Grab the element by ID
+            title = Element("title")
+            # Change its inner text
+            title.write("Title changed by Python!")
+
+        # Attach the function to the button click
+        Element("btn").element.onclick = change_title
+    </py-script>
+</body>
+</html>
 
