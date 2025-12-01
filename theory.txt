@@ -1,5 +1,22 @@
-Bars:
+METERS:
 sanity
 Hp
+oxygen
+temp
 favor
+pity
 
+MENU:
+New
+load
+
+BASE GAME PANELS:
+Events (left), text
+Actions (centre):
+    Body (top):
+      Body stats (left)
+      Body actions (right)
+    Talk:
+      Other character speach (top box)
+      Player speak options (bottom)
+Save, Menu, Spotify (bottom)
