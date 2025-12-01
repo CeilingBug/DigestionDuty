@@ -22,13 +22,13 @@
     <py-script>
         from js import document
 
-        def change_title():
+        def change_title(_):
             # Grab the element by ID
             title = document.getElementById("title")
             # Change its inner text
             title.innerText = "Title changed by Python!"
             
-        def save_game():
+        def save_game(_):
             game_state = "health=80\nlocation=forest\ninventory=sword,shield"
             link = document.createElement("a")
             link.href = "data:text/plain;charset=utf-8," + game_state
