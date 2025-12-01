@@ -6,17 +6,34 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    <h1 id="title">Original Title</h1>
+    <nav>
+        <p>hello there, this is the nav bar</p>
+    </nav>
+    <h1 id="title">Testing testing, the Hyper Text Markup Language torture chamber for Comp Sci people (a js, py, html, and css amalgamation)</h1>
     <button id="btn">Click Me</button>
-
+    <button id="save">Save Game</button>
     <py-script>
         from pyscript import Element
-
-        def change_title(event):
+        from js import document
+        #event handler is uneeded unless acessing extra info like Element details or js stuff
+        def change_title():
             # Grab the element by ID
             title = Element("title")
             # Change its inner text
             title.write("Title changed by Python!")
+        
+        def save_game():
+            # Game state as plain text
+            game_state = "health=80\nlocation=forest\ninventory=sword,shield"
+            
+            # Create a hidden link
+            link = document.createElement("a")
+            link.href = "data:text/plain;charset=utf-8," + game_state
+            link.download = "savegame.txt"
+            link.click()
+
+        # Attach the function to the button click
+        Element("save").element.onclick = save_game
 
         # Attach the function to the button click
         Element("btn").element.onclick = change_title
@@ -28,13 +45,13 @@
         h1 {
             color: white;
         }
-        #btn {
+        button {
             background-color: #431010;
             color: white;
             border: solid, 0.1em;
             transition: background-color 0.2s ease;
         }
-        #btn:hover {
+        button:hover {
             background-color: #632B2B; /* Darker blue on hover */
         }
     </style>
