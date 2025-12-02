@@ -33,7 +33,8 @@
         favor = 100
         pity = 100
 
-        def update_player_stats(oxygen):
+        def update_player_stats():
+            global oxygen
             oxygen -= 1
             s = document.getElementById("sanity")
             s.innerText = f"Sanity: {sanity}"
@@ -57,7 +58,7 @@
             link.click()
         
         # Attach the functions
-        setInterval(update_player_stats(oxygen), 2000)
+        setInterval(update_player_stats, 2000)
         document.getElementById("save").onclick = save_game
     </py-script>
     <style>
