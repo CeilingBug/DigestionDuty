@@ -24,7 +24,7 @@
         <button id="spotify">Spotify</button>
     </div>
     <py-script>
-        from js import document, setInterval
+        from js import document, window
 
         sanity = 100
         hp = 100
@@ -58,7 +58,7 @@
             link.click()
         
         # Attach the functions
-        setInterval(update_player_stats, 2000)
+        window.setInterval(update_player_stats, 2000)
         document.getElementById("save").onclick = save_game
     </py-script>
     <style>
