@@ -38,7 +38,7 @@
         player = Player()
 
         def update_player_stats():
-            global player.oxygen
+            global player
             player.oxygen -= 1
             s = document.getElementById("sanity")
             s.innerText = f"Sanity: {player.sanity}"
