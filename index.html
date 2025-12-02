@@ -11,61 +11,21 @@
     <title>A Concrete Room</title>
 </head>
 <body>
-    <div>
-        <p id="sanity"></p>
-        <p id="hp"></p>
-        <p id="oxygen"></p>
-        <p id="temp"></p>
-        <p id="favor"></p>
-        <p id="pity"></p>
-    </div>
     <div class="footer">
         <button id="save">Save Game</button>
         <button id="spotify">Spotify</button>
     </div>
-    <py-script>
-        from js import document, window
-
-        class Player:
-            def __init__(self):
-                self.sanity = 100
-                self.hp = 100
-                self.oxygen = 100
-                self.temp = 100
-                self.favor = 100
-                self.pity = 100
-
-        player = Player()
-
-        def update_player_stats():
-            global player
-            player.oxygen -= 1
-            s = document.getElementById("sanity")
-            s.innerText = f"Sanity: {player.sanity}"
-            h = document.getElementById("hp")
-            h.innerText = f"HP: {player.hp}"
-            o = document.getElementById("oxygen")
-            o.innerText = f"Oxygen: {player.oxygen}"
-            t = document.getElementById("temp")
-            t.innerText = f"Temp: {player.temp}"
-            f = document.getElementById("favor")
-            f.innerText = f"Favor: {player.favor}"
-            p = document.getElementById("pity")
-            p.innerText = f"Pity: {player.pity}"
-            
-            
-        def save_game(_):
-            game_state = "N/A"
-            link = document.createElement("a")
-            link.href = "data:text/plain;charset=utf-8," + game_state
-            link.download = "savegame.txt"
-            link.click()
+    <script>
+        //def save_game(_):
+        //    game_state = "N/A"
+        //    link = document.createElement("a")
+        //    link.href = "data:text/plain;charset=utf-8," + game_state
+        //    link.download = "savegame.txt"
+        //    link.click()
         
-        # Attach the functions
-        update_player_stats()
-        window.setInterval(update_player_stats, 2000)
-        document.getElementById("save").onclick = save_game
-    </py-script>
+        // Attach the functions
+        // document.getElementById("save").onclick = save_game
+    </script>
     <style>
         body {
             background-color: #431010;
