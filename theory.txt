@@ -6,10 +6,6 @@ temp
 favor
 pity
 
-MENU:
-New
-load
-
 BASE GAME PANELS:
 Events (left), text
 Actions (centre):
@@ -19,4 +15,4 @@ Actions (centre):
     Talk:
       Other character speach (top box)
       Player speak options (bottom)
-Save, Menu, Spotify (bottom)
+Save, Spotify (bottom)
