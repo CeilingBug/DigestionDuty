@@ -11,25 +11,21 @@
     <title>A Concrete Room</title>
 </head>
 <body>
-    <nav>
-        <p>hello there, this is the nav bar</p>
-    </nav>
-    <h1 id="title">Testing testing, the Hyper Text Markup Language torture chamber for Comp Sci people (a js, py, html, and css amalgamation)</h1>
-    <div id="buttons">
-        <button id="btn">Click Me</button>
+    <div class="footer">
         <button id="save">Save Game</button>
+        <button id="spotify">Spotify</button>
     </div>
     <py-script>
         from js import document
 
-        def change_title(_):
+        #def change_title(_):
             # Grab the element by ID
-            title = document.getElementById("title")
+        #   title = document.getElementById("title")
             # Change its inner text
-            title.innerText = "Title changed by Python!"
+        #   title.innerText = "Title changed by Python!"
             
         def save_game(_):
-            game_state = "health=80\nlocation=forest\ninventory=sword,shield"
+            game_state = "N/A"
             link = document.createElement("a")
             link.href = "data:text/plain;charset=utf-8," + game_state
             link.download = "savegame.txt"
@@ -37,7 +33,6 @@
         
         # Attach the functions
         document.getElementById("save").onclick = save_game
-        document.getElementById("btn").onclick = change_title
     </py-script>
     <style>
         body {
@@ -56,7 +51,12 @@
         button:hover {
             background-color: #632B2B; /* Darker blue on hover */
         }
-        #buttons {
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding-bottom: 1.0em;
             padding-left: 1.0em;
         }
     </style>
