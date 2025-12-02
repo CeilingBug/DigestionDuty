@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Title to be changed</h1>
+    <div class="stats">
+        <p id="stat">100</p>
+    </div>
     <div class="footer">
         <button id="save">Save Game</button>
         <button id="spotify">Spotify</button>
@@ -25,6 +28,11 @@
               // Trigger the download
               link.click();
         }
+
+        const statElement = document.getElementById("stat");
+        let currentValue = parseInt(statElement.innerText, 10);
+        currentValue -= 1
+        statElement.innerText = currentValue.toString()
 
         // Attach event handlers
         document.getElementById("save").addEventListener("click", saveGame);
@@ -53,6 +61,9 @@
             width: 100%;
             padding-bottom: 1.0em;
             padding-left: 1.0em;
+        }
+        .stats {
+            color: white;
         }
     </style>
 </body>
