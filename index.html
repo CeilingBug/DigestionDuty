@@ -12,15 +12,18 @@
         <button id="spotify">Spotify</button>
     </div>
     <script>
-        //def save_game(_):
-        //    game_state = "N/A"
-        //    link = document.createElement("a")
-        //    link.href = "data:text/plain;charset=utf-8," + game_state
-        //    link.download = "savegame.txt"
-        //    link.click()
-        
-        // Attach the functions
-        // document.getElementById("save").onclick = save_game
+        function saveGame() {
+              // Example game state (replace with your actual data)
+              const gameState = "N/A";
+              
+              // Create a temporary link element
+              const link = document.createElement("a");
+              link.href = "data:text/plain;charset=utf-8," + encodeURIComponent(gameState);
+              link.download = "savegame.txt";
+              
+              // Trigger the download
+              link.click();
+        }
     </script>
     <style>
         body {
