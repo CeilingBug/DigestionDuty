@@ -26,28 +26,32 @@
     <py-script>
         from js import document, window
 
-        sanity = 100
-        hp = 100
-        oxygen = 100
-        temp = 100
-        favor = 100
-        pity = 100
+        class Player:
+            def __init__(self):
+                self.sanity = 100
+                self.hp = 100
+                self.oxygen = 100
+                self.temp = 100
+                self.favor = 100
+                self.pity = 100
+
+        player = Player()
 
         def update_player_stats():
-            global oxygen
-            oxygen -= 1
+            global player.oxygen
+            player.oxygen -= 1
             s = document.getElementById("sanity")
-            s.innerText = f"Sanity: {sanity}"
+            s.innerText = f"Sanity: {player.sanity}"
             h = document.getElementById("hp")
-            h.innerText = f"HP: {hp}"
+            h.innerText = f"HP: {player.hp}"
             o = document.getElementById("oxygen")
-            o.innerText = f"Oxygen: {oxygen}"
+            o.innerText = f"Oxygen: {player.oxygen}"
             t = document.getElementById("temp")
-            t.innerText = f"Temp: {temp}"
+            t.innerText = f"Temp: {player.temp}"
             f = document.getElementById("favor")
-            f.innerText = f"Favor: {favor}"
+            f.innerText = f"Favor: {player.favor}"
             p = document.getElementById("pity")
-            p.innerText = f"Pity: {pity}"
+            p.innerText = f"Pity: {player.pity}"
             
             
         def save_game(_):
@@ -59,9 +63,8 @@
         
         # Attach the functions
         update_player_stats()
-        while True:
-            window.setInterval(update_player_stats, 2000)
-            document.getElementById("save").onclick = save_game
+        window.setInterval(update_player_stats, 2000)
+        document.getElementById("save").onclick = save_game
     </py-script>
     <style>
         body {
