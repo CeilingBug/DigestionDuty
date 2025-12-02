@@ -11,6 +11,14 @@
     <title>A Concrete Room</title>
 </head>
 <body>
+    <div>
+        <p id="sanity"></p>
+        <p id="hp"></p>
+        <p id="oxygen"></p>
+        <p id="temp"></p>
+        <p id="favor"></p>
+        <p id="pity"></p>
+    </div>
     <div class="footer">
         <button id="save">Save Game</button>
         <button id="spotify">Spotify</button>
@@ -18,11 +26,27 @@
     <py-script>
         from js import document
 
-        #def change_title(_):
-            # Grab the element by ID
-        #   title = document.getElementById("title")
-            # Change its inner text
-        #   title.innerText = "Title changed by Python!"
+        sanity = 100
+        hp = 100
+        oxygen = 100
+        temp = 100
+        favor = 100
+        pity = 100
+
+        def update_player_stats():
+            s = document.getElementById("sanity")
+            s.innerText = f"Sanity: {sanity}"
+            h = document.getElementById("hp")
+            h.innerText = f"HP: {hp}"
+            o = document.getElementById("oxygen")
+            o.innerText = f"Oxygen: {oxygen}"
+            t = document.getElementById("temp")
+            t.innerText = f"Temp: {temp}"
+            f = document.getElementById("favor")
+            f.innerText = f"Favor: {favor}"
+            p = document.getElementById("pity")
+            p.innerText = f"Pity: {pity}"
+            
             
         def save_game(_):
             game_state = "N/A"
@@ -32,6 +56,7 @@
             link.click()
         
         # Attach the functions
+        update_player_stats()
         document.getElementById("save").onclick = save_game
     </py-script>
     <style>
