@@ -8,8 +8,14 @@
 </head>
 <body>
     <h1>Title to be changed</h1>
-    <div class="stats">
-        <p id="stat">100</p>
+    <div class="master">
+        <div class="container">
+            <p id="stat">100</p>
+        </div>
+        <div class="container">
+            <div class="floater"></div>
+            <div class="floater"></div>
+        </div>
     </div>
     <div class="footer">
         <button id="save">Save Game</button>
@@ -63,8 +69,18 @@
             padding-right: 1.0em;
             text-align: right;
         }
-        .stats {
+        .master {
+            background-color: white;
+        }
+        .container {
             color: white;
+            float: left;
+            background-color: blue;
+        }
+        .floater {
+            color: white;
+            float: top;
+            background-color: green;
         }
     </style>
 </body>
